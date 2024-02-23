@@ -1,0 +1,11 @@
+<div class="card shadow">
+    <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{currentStudent.name}}</h5>
+        <p class="card-text mb-2 "> <span class="text-primary text-emphasis">Age: </span> {{currentStudent.age}}</p>
+        <p class="card-text mb-2 text-primary text-emphasis">email: </p> 
+        <p><a class="card-text" [href]="'mailto:' + currentStudent.email"> {{currentStudent.email}}</a></p>
+        <p> <span class="card-text mb-2 text-primary text-emphasis">Curso: </span> {{currentStudent.grade}}</p>
+    </div>
+</div>
+

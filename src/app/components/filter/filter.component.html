@@ -1,0 +1,24 @@
+
+
+<!-- V1 filtro con formulario -->
+<!-- <form novalidate="true" #filterForm="ngForm" class="d-flex mb-3 gap-3" (ngSubmit)="filterData(filterForm)">
+    <input type="submit" class="btn btn-secondary" value="filter">
+    <select class="form-select pt-2 pb-2" name="grade" ngModel>
+        <option value="" selected>Selecciona una clase</option>
+        @for (grade of arrGrades; track $index) {
+            <option value="{{grade.value}}">{{grade.title}}</option>
+        }
+    </select>
+</form> -->
+
+<!-- V2 filtro con evento CHANGE del select -->
+<div class="container ps-0 pe-0">
+    <select class="form-select pt-2 pb-2 mb-2" name="grade" ngModel (change)="filterData($event)">
+        <option value="" selected>Selecciona una clase</option>
+        @for (grade of arrGrades; track $index) {
+            <option value="{{grade.value}}">{{grade.title}}</option>
+        }
+    </select>
+</div>
+
+<router-outlet/>

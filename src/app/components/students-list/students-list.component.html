@@ -1,0 +1,15 @@
+<section class="container mt-3">
+    <h2>Estudiantes</h2>
+    <app-filter (filterValue)="filterByGrade($event)"></app-filter>
+
+    <div class="row">
+        @for (student of arrStudents; track student.id) {
+            <article class="col-6 col-md-4 col-lg-3 gap-0 mb-3">
+                <app-student-card [currentStudent]="student"></app-student-card>
+            </article>
+        }@empty {
+            <h4>Ningún resultado para el filtro seleccionado</h4>
+        }
+    </div>
+</section>
+
