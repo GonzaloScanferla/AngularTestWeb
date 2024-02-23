@@ -8,7 +8,7 @@ import { GRADES } from '../db/grades.db';
 })
 export class StudentsService {
 
-  // creo los elementos privado para que, una vez inicializados, no puedan ser modificados por otros elelemntos
+  // creo los elementos privados para que, una vez inicializados, no puedan ser modificados por otros elelemntos
   private arrStudents : IStudent [] = STUDENTS 
   private id : number = 4 
 
