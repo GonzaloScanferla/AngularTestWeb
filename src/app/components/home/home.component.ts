@@ -22,9 +22,12 @@ export class HomeComponent {
   suscribe (suscribeForm : any) : void {
     this.error = false
     if (suscribeForm.value.email !== "") {
-      console.log (suscribeForm.value.email)
-      // injección de dependencia para redireccionar a otra página
+      // el método navigate de router permite navegar a una ruta interna generada como array
       this.router.navigate(['/students'])
+
+      // el método navigateByUrl en vez permite navegar a una ruta interna generada como texto
+      // this.router.navigateByUrl ('/students')
+
     } else {
       this.error = true
     }

@@ -4,4 +4,6 @@ export interface IStudent {
     age: number;
     email: string;
     grade: string;
+    description: string;
+    url: string;
 }

@@ -1,0 +1,17 @@
+<!-- Pagina con la información detallada de cada alumno. La ruta de la página es dinamica -->
+
+<div class="container">
+    <h1 class="text-secondary-emphasis">{{currentStudent.name}} </h1>
+    <div>
+        <h6 class="text-primary d-inline-block me-3">email: </h6> <a href="mailto: {{currentStudent.email}} " class="d-inline-block">{{currentStudent.email}} </a>
+    </div>
+    <div>
+        <h6 class="text-primary d-inline-block me-3">Edad: </h6> <p class="d-inline-block">{{currentStudent.age}} </p>
+    </div>
+    <div>
+        <h6 class="text-primary d-inline-block me-3">Curso: </h6> <p class="d-inline-block">{{currentStudent.grade}} </p>
+    </div>
+    <div>
+        <h6 class="text-primary me-3">Descripción: </h6> <p class="text-justify">{{currentStudent.description}} </p>
+    </div>
+</div>

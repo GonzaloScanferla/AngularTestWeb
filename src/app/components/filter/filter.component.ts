@@ -12,14 +12,14 @@ import { RouterOutlet } from '@angular/router';
 })
 export class FilterComponent {
 
-  studentServices = inject (StudentsService)
+  studentService = inject (StudentsService)
   arrGrades : Array<any> = []
   filter : any 
 
   @Output() filterValue : EventEmitter <string> = new EventEmitter ()
 
   ngOnInit () {
-    this.arrGrades = this.studentServices.getAllGrades ()
+    this.arrGrades = this.studentService.getAllGrades ()
   }
 
   // v1 - filtro con formulario template

@@ -12,11 +12,12 @@ import { StudentsService } from '../../services/students.service';
 export class StudentFormComponent {
 
   inputForm : FormGroup
-
   studentService = inject (StudentsService)
+  arrGrades : Array<any> = []
 
   constructor () {
 
+    // inicialización de los validadores del formulario
     this.inputForm = new FormGroup ({
       id: new FormControl (null,[]),
       name: new FormControl (null,[
@@ -28,27 +29,31 @@ export class StudentFormComponent {
       ]),
       email: new FormControl (null,[
         Validators.required,
-        Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
+        Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)   /* validación del patrón de email */
       ]),
-      grade: new FormControl ('default',[
+      grade: new FormControl (null,[
         Validators.required,
-        this.gradeValidator
-      ])
+      ]),
+      description: new FormControl (null,[])
     },[])
   }
 
+  // inicializamos desde BBDD el array con los elementos para el listado del filtro de estudiantes
+  ngOnInit () {
+    this.arrGrades = this.studentService.getAllGrades ()
+  }
+
+  // recogemos el input del formulario para realizar el insert en el servicio
   getDataForm () :void {
     let msg : string = this.studentService.insertNewStudent(this.inputForm.value)
     alert(msg)
     this.inputForm.reset()
   }
 
+  // Función para la validación de los elementos del formulario
+
   checkControl (formControlName : string, validator:string) : boolean | undefined {
     return this.inputForm.get(formControlName)?.hasError(validator) && (this.inputForm.get(formControlName)?.touched)
-  }
-
-  gradeValidator (grade : AbstractControl | any) : any {
-    return (grade === "Clase") ? {'gradevalidator' : "Debes Seleccionar un curso"} : null
   }
 
 }

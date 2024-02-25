@@ -22,6 +22,10 @@ export class StudentsService {
     return this.arrStudents.find ((student: IStudent) => student.id === id)
   }
 
+  getByUrl (url : string) : IStudent | undefined {
+    return this.arrStudents.find ((student: IStudent) => student.url === url)
+  }
+
   getByGrade (grade : string) : IStudent [] {
     // v1
     // return (grade !== "" ) ? 
@@ -37,6 +41,7 @@ export class StudentsService {
     newStudent.id = this.id
     let position = this.arrStudents.findIndex(student => student.email === newStudent.email)
     if (position === -1) {
+      newStudent.url = `${newStudent.id}${newStudent.name.replace(/\s/g, "")}`
       let test = this.arrStudents.push (newStudent)
       this.id ++
       return (test) ?  "Insertado correctamente" : "No se ha podido añadir el alumno"

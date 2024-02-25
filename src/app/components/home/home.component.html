@@ -1,4 +1,5 @@
 
+<!-- Home de la web con input de suscripción a la newsletter -->
 <section class="container home-container">
     <div class="hero bg-light bg-primary-subtle">
         <div class="text-center">
@@ -7,19 +8,25 @@
             <h4 class="text-secondary">Una página absolutamente inítil para hacer pruebas</h4>
             <p>Consulta nuestro listado de alumnos</p>
             <div class="img-wrap">
-                <img [routerLink]="['/students']" src="https://img.freepik.com/fotos-premium/estudiante-chica-cansada-que-estudia-casa-chica-desesperada-puso-su-cabeza-sobre-mesa_116407-10842.jpg?w=1380"alt="Help!">
-            </div>
-            <form #suscribeForm="ngForm" (ngSubmit)="suscribe(suscribeForm)">
-                <div class="d-flex gap-1 m-4">
-                    <input type="text" class="form-control" placeholder="email" name="email" ngModel>
-                    <input type="submit" class="btn btn-primary" value="Suscribirse">
-                </div>
-                <!-- comprobación manual de validación template -->
-                @if (this.error) {
-                    <p class="text-danger">'El email no puede estar vacío'</p>
-                }
-            </form>
+                <a  [routerLink]="['/students']">
+                    <img src="https://img.freepik.com/fotos-premium/estudiante-chica-cansada-que-estudia-casa-chica-desesperada-puso-su-cabeza-sobre-mesa_116407-10842.jpg?w=1380"alt="Help!">
 
+                </a>
+            </div>
+            <hr>
+            <div class="mb-3">
+                <h3 class="text-secondary">Suscribete a nuestra aburridísima newsletter</h3>
+                <form #suscribeForm="ngForm" (ngSubmit)="suscribe(suscribeForm)">
+                    <div class="d-flex gap-1 m-4">
+                        <input type="text" class="form-control" placeholder="email" name="email" ngModel>
+                        <input type="submit" class="btn btn-primary" value="Suscribirse">
+                    </div>
+                    <!-- comprobación manual de validación template -->
+                    @if (this.error) {
+                        <p class="text-danger">'El email no puede estar vacío'</p>
+                    }
+                </form>
+            </div>
         </div>
     </div>
 </section>

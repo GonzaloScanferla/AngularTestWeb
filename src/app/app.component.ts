@@ -10,5 +10,4 @@ import { NavigationComponent } from './components/navigation/navigation.componen
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'servicios';
 }

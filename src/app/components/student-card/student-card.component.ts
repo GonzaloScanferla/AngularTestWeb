@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { IStudent } from '../../interfaces/istudent.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-student-card',
   standalone: true,
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './student-card.component.html',
   styleUrl: './student-card.component.css'
 })

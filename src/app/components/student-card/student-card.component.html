@@ -1,3 +1,5 @@
+<!-- Card de cada alumno para la vista de resumen de todos los usuarios -->
+
 <div class="card shadow">
     <img src="https://placehold.co/600x400" class="card-img-top" alt="...">
     <div class="card-body">
@@ -6,6 +8,7 @@
         <p class="card-text mb-2 text-primary text-emphasis">email: </p> 
         <p><a class="card-text" [href]="'mailto:' + currentStudent.email"> {{currentStudent.email}}</a></p>
         <p> <span class="card-text mb-2 text-primary text-emphasis">Curso: </span> {{currentStudent.grade}}</p>
+        <a class="btn" [routerLink]="['/students', currentStudent.url]" ><img src="https://www.svgrepo.com/show/499786/add-to.svg" class="btn-plus" alt="More Info"></a>
     </div>
 </div>
 
